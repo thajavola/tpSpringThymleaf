@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+    <title>entree</title>
+</head>
+
+<body>
+
+
+<div class="content">
+
+    <div class="container">
+        <h2 class="mb-5">Entrée List</h2>
+        <a href="/enter/newE">Créer une nouvelle Entrée</a>
+        <div class="table-responsive">
+
+            <table class="table custom-table">
+                <thead>
+                <tr>
+                   
+                    <th scope="col">id</th>
+                    <th scope="col">Numero Entrée</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Description</th>
+                    <th scope="prix">Montant</th>
+                    <th scope="prix">Utilisateur</th>
+                    <th scope="prix">Code</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="entree : ${listEntrees}" bgcolor="#f0f8ff" class="col-md-4 my-1 odd-row-color">
+                    
+                    <td th:text="${entree.ident}">ID</td>
+                    <td th:text="${entree.nent}">Numero Entrée</td>
+                    <td th:text="${entree.date}">Date</td>
+                    <td th:text="${entree.description}">Description</td>
+                    <td th:text="${entree.montant}">Montant</td>
+                    <td th:text="${entree.usr}">Utilisateur</td>
+                    <td th:text="${entree.code}">Code</td>
+                    
+<!-- 
+                        <td >
+                            <a th:href="@{|/edit/${entree.ident|}" th:text="Modifier">
+                                Modifier
+                             </a>
+          
+                                <a th:href="@{|/delete/${entree.ident}|}" th:text="Supprimer">
+                                   Supprimer
+                            </a>
+                        
+                        </td>  -->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

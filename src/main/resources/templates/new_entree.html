@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+    <title>entree</title>
+</head>
+
+<body>
+
+
+<div class="content">
+
+    <div class="container">
+        <h2 class="mb-5">Créer un nouveau entree</h2>
+        <br/>
+        <form class="form" th:action="@{/enter/save_E}" th:object="${entree}" method="post">
+            <table class="table row">
+                <tr class="table-header">
+                    <td>Numero Entrée:</td>
+                    <td><input type="text" th:field="*{nent}"/></td>
+                </tr>
+                <tr >
+                    <td>Date:</td>
+                    <td><input type="datetime-local" th:field="*{date}"/></td>
+                </tr>
+                <tr >
+                    <td>Décription:</td>
+                    <td>
+                        <textarea cols="30" rows="10" placeholder="Message.." th:field="*{description}"></textarea>
+                    </td>
+
+                </tr>
+
+                <tr >
+                    <td>Montant:</td>
+                    <td><input type="text" th:field="*{montant}"/></td>
+                </tr>
+                <tr >
+                    <td>Utilisateur:</td>
+                    <td><input type="text" th:field="*{usr}"/></td>
+                </tr>
+                <tr >
+                    <td>Code:</td>
+                    <td><input type="text" th:field="*{code}"/></td>
+                </tr>
+                <tr >
+                    
+                    <td colspan="2"><button type="submit">Ajouter</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

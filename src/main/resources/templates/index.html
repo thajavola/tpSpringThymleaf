@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+    <title>Product</title>
+</head>
+
+<body>
+
+
+<div class="content">
+
+    <div class="container">
+        <h2 class="mb-5">Product List</h2>
+        <a href="/new">Créer un nouveau Produit</a>
+        <div class="table-responsive">
+
+            <table class="table custom-table">
+                <thead>
+                <tr>
+                   
+                    <th scope="col">id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Marque</th>
+                    <th scope="col">Made in</th>
+                    <th scope="prix">Prix</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="produit : ${listProducts}" bgcolor="#f0f8ff" class="col-md-4 my-1 odd-row-color">
+                    
+                    <td th:text="${produit.id}">ID</td>
+                    <td th:text="${produit.name}">Nom</td>
+                    <td th:text="${produit.brand}">Firme</td>
+                    <td th:text="${produit.madein}">Fabriqué à</td>
+                    <td th:text="${produit.price}">Prix</td>
+
+                        <td >
+                            <a th:href="@{|/edit/${produit.id}|}" th:text="Modifier">
+                                Modifier
+                             </a>
+          
+                                <a th:href="@{|/delete/${produit.id}|}" th:text="Supprimer">
+                                   Supprimer
+                            </a>
+                        
+                        </td> 
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
