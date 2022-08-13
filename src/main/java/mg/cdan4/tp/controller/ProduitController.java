@@ -18,7 +18,7 @@ import mg.cdan4.tp.service.ProduitService;
 public class ProduitController {
     @Autowired
     ProduitService produitService;
-
+    
     @RequestMapping("/")
     public String viewHomePage(Model model){
       List<Produit> listProducts = produitService.listAll();

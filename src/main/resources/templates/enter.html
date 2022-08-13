@@ -18,7 +18,7 @@
 
     <div class="container">
         <h2 class="mb-5">Entrée List</h2>
-        <a href="/enter/newE">Créer une nouvelle Entrée</a>
+        <a href="/enter/new_E">Créer une nouvelle Entrée</a>
         <div class="table-responsive">
 
             <table class="table custom-table">
@@ -40,23 +40,23 @@
                     
                     <td th:text="${entree.ident}">ID</td>
                     <td th:text="${entree.nent}">Numero Entrée</td>
-                    <td th:text="${entree.date}">Date</td>
+                    <td th:text="${#dates.format(entree.date, 'dd-MMM-yyyy')}">Date</td>
                     <td th:text="${entree.description}">Description</td>
-                    <td th:text="${entree.montant}">Montant</td>
+                    <td th:text="${#numbers.formatCurrency(entree.montant)}">Montant</td>
                     <td th:text="${entree.usr}">Utilisateur</td>
                     <td th:text="${entree.code}">Code</td>
                     
-<!-- 
+
                         <td >
-                            <a th:href="@{|/edit/${entree.ident|}" th:text="Modifier">
+                            <a th:href="@{|/enter/modif/${entree.ident}|}" th:text="Modifier">
                                 Modifier
                              </a>
           
-                                <a th:href="@{|/delete/${entree.ident}|}" th:text="Supprimer">
+                                <a th:href="@{|/enter/supr/${entree.ident}|}" th:text="Supprimer">
                                    Supprimer
                             </a>
                         
-                        </td>  -->
+                        </td>  
                 </tr>
                 </tbody>
             </table>

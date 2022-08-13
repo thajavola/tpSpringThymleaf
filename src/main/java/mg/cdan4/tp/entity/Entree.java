@@ -1,5 +1,7 @@
 package mg.cdan4.tp.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +22,8 @@ public class Entree {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ident;
     private String nent;
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
-    private String date;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date date;
     private String description;
     private double montant;
     private String usr;

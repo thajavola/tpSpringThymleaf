@@ -25,7 +25,7 @@ public class EntreeController {
     return "enter";
     }
 
-    @RequestMapping("/newE")
+    @RequestMapping("/new_E")
     public String nouveauentree(Model model){
       Entree entree = new Entree();
       model.addAttribute("entree", entree);
@@ -34,6 +34,19 @@ public class EntreeController {
     @PostMapping(value= "/save_E")
     public String saveentree(@ModelAttribute("entree") Entree entree){
       entreeService.save(entree);
+      return "redirect:/enter/";
+    }
+
+    @RequestMapping("/modif/{id}")
+    public ModelAndView afficheEntreeEdit(@PathVariable(name="id")int id){
+      ModelAndView mav = new ModelAndView("edit_entree");
+      Entree entree = entreeService.get(id);
+      mav.addObject("entree", entree);
+      return mav;
+    }
+    @RequestMapping("/supr/{id}")
+    public String supprimEntree(@PathVariable(name="id")int id){
+      entreeService.delete(id);
       return "redirect:/enter/";
     }
 
