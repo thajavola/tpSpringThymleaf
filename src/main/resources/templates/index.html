@@ -48,14 +48,14 @@
                             <td th:text="${produit.name}">Nom</td>
                             <td th:text="${produit.brand}">Firme</td>
                             <td th:text="${produit.madein}">Fabriqué à</td>
-                            <td th:text="${produit.price}">Prix</td>
+                            <td th:text="${#numbers.formatCurrency(produit.price)}">Prix</td>
 
                             <td>
-                                <a th:href="@{|/edit/${produit.id}|}" th:text="Modifier">
+                                <a th:href="@{|/edit/${produit.id}|}">
                                     <i class="fa fa-edit"></i>
                                 </a>
 
-                                <a th:href="@{|/delete/${produit.id}|}" th:text="Supprimer">
+                                <a th:href="@{|/delete/${produit.id}|}">
                                     <i class="fa fa-remove"></i>
                                 </a>
 
