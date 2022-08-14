@@ -20,6 +20,10 @@ public class EntreeService {
     public List<Entree> listAll(){
         return entreeRepository.findAll();
     }
+
+    public List<Entree> listByNent(String nent){
+        return entreeRepository.findByNent(nent);
+    }
     public void save(Entree entree){
         entreeRepository.save(entree);
     }

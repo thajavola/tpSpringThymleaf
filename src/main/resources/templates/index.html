@@ -6,7 +6,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Product</title>
 </head>
@@ -14,57 +22,57 @@
 <body>
 
 
-<div class="content">
+    <div class="content">
 
-    <div class="container">
-        <h2 class="mb-5">Product List</h2>
-        <a href="/new">Créer un nouveau Produit</a>
-        <div class="table-responsive">
+        <div class="container">
+            <h2 class="mb-5">Product List</h2>
+            <a href="/new">Créer un nouveau Produit</a>
+            <div class="table-responsive">
 
-            <table class="table custom-table">
-                <thead>
-                <tr>
-                   
-                    <th scope="col">id</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Marque</th>
-                    <th scope="col">Made in</th>
-                    <th scope="col">Prix</th>
-                    <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="produit : ${listProducts}" bgcolor="#f0f8ff" class="col-md-4 my-1 odd-row-color">
-                    
-                    <td th:text="${produit.id}">ID</td>
-                    <td th:text="${produit.name}">Nom</td>
-                    <td th:text="${produit.brand}">Firme</td>
-                    <td th:text="${produit.madein}">Fabriqué à</td>
-                    <td th:text="${produit.price}">Prix</td>
+                <table class="table custom-table">
+                    <thead>
+                        <tr>
 
-                        <td >
-                            <a th:href="@{|/edit/${produit.id}|}" th:text="Modifier">
-                                Modifier
-                             </a>
-          
+                            <th scope="col">id</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Marque</th>
+                            <th scope="col">Made in</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="produit : ${listProducts}" bgcolor="#f0f8ff" class="col-md-4 my-1 odd-row-color">
+
+                            <td th:text="${produit.id}">ID</td>
+                            <td th:text="${produit.name}">Nom</td>
+                            <td th:text="${produit.brand}">Firme</td>
+                            <td th:text="${produit.madein}">Fabriqué à</td>
+                            <td th:text="${produit.price}">Prix</td>
+
+                            <td>
+                                <a th:href="@{|/edit/${produit.id}|}" th:text="Modifier">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+
                                 <a th:href="@{|/delete/${produit.id}|}" th:text="Supprimer">
-                                   Supprimer
-                            </a>
-                        
-                        </td> 
-                </tr>
-                </tbody>
-            </table>
+                                    <i class="fa fa-remove"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
 
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
